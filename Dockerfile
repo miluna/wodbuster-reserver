@@ -1,0 +1,11 @@
+FROM cypress/browsers:node-18.16.0-chrome-113.0.5672.92-1-ff-113.0-edge-113.0.1774.35-1
+WORKDIR /app
+COPY . .
+RUN npm install
+ENV CYPRESS_USERNAME="user"
+ENV CYPRESS_PASSWORD="pass"
+ENV CYPRESS_HOST="host"
+ENV CYPRESS_NOTICE_DAYS=1
+ENV CYPRESS_CLASS_TYPE="CrossFit"
+ENV CYPRESS_CLASS_TIME="1945"
+CMD ["npm", "run", "run-headless"]
